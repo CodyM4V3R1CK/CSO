@@ -1,0 +1,176 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.1",
+    "script_metadata_hash": "c083551122bfaf038b3d24bef711369b"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "9be9bd19e9a08f1add7976712a04f900",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "8c33e29a2281a7075cfbbb8de3ccd66f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"kompresia-obrazu-dft-vs-dct\">Kompresia obrazu: DFT vs. DCT</h1>\n<span class=\"paragraph\"><strong>CSO 2026/27 \u00b7 cvi\u010denie 5</strong></span>\n<span class=\"paragraph\">Obraz rekon\u0161truujeme len z K najv\u00e4\u010d\u0161\u00edch koeficientov transform\u00e1cie. \u010c\u00edm menej koeficientov,\nt\u00fdm hor\u0161ia kvalita. Pri rovnakom K je DCT spravidla lep\u0161ia ne\u017e DFT.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "dc92246bf9c1d97c5e81cd9d1ccdf536",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"1-teoria\">1. Te\u00f3ria</h2>\n<span class=\"paragraph\"><strong>2D DFT</strong> obrazu <marimo-tex class=\"arithmatex\">||(x[m,n]||)</marimo-tex> ve\u013ekosti <marimo-tex class=\"arithmatex\">||(M\\times N||)</marimo-tex>:</span>\n<marimo-tex class=\"arithmatex\">||[\nX[k_1,k_2]=\\sum_{m=0}^{M-1}\\sum_{n=0}^{N-1} x[m,n]\\,e^{-2\\pi i\\left(\\frac{k_1 m}{M}+\\frac{k_2 n}{N}\\right)}\n||]</marimo-tex><span class=\"paragraph\"><strong>2D DCT-II</strong> (ortonorm\u00e1lna):</span>\n<marimo-tex class=\"arithmatex\">||[\nC[k_1,k_2]=\\alpha_{k_1}\\alpha_{k_2}\\sum_{m,n} x[m,n]\\cos\\frac{\\pi(2m+1)k_1}{2M}\\cos\\frac{\\pi(2n+1)k_2}{2N},\\qquad\n\\alpha_0=\\sqrt{\\tfrac{1}{M}},\\ \\alpha_k=\\sqrt{\\tfrac{2}{M}}\n||]</marimo-tex><span class=\"paragraph\"><strong>Aproxim\u00e1cia K koeficientmi:</strong> ponech\u00e1me mno\u017einu <marimo-tex class=\"arithmatex\">||(\\Omega_K||)</marimo-tex> s K najv\u00e4\u010d\u0161\u00edmi <marimo-tex class=\"arithmatex\">||(|C[k]|||)</marimo-tex>, ostatn\u00e9 vynulujeme a urob\u00edme inverzn\u00fa transform\u00e1ciu.\nZ Parsevalovej rovnosti je relat\u00edvna chyba dan\u00e1 energiou zahoden\u00fdch koeficientov:</span>\n<marimo-tex class=\"arithmatex\">||[\n\\frac{\\|x-\\hat x\\|^2}{\\|x\\|^2}=\\frac{\\sum_{k\\notin\\Omega_K}|C[k]|^2}{\\sum_k |C[k]|^2}\n||]</marimo-tex><span class=\"paragraph\"><strong>Pre\u010do je DCT lep\u0161ia:</strong> DFT implicitne predpoklad\u00e1 periodick\u00e9 pokra\u010dovanie obrazu. \u013dav\u00fd okraj sa napoj\u00ed na prav\u00fd, vznikne skok a jeho energia sa rozpt\u00fdli do mnoh\u00fdch vysok\u00fdch frekvenci\u00ed. DCT zodpoved\u00e1 symetrick\u00e9mu (zrkadlov\u00e9mu) pokra\u010dovaniu bez skoku, tak\u017ee energia je s\u00fastreden\u00e1 v men\u0161om po\u010dte koeficientov.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "a60bb9e15d6db8387cced214bbb7582d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"2-interaktivna-cast\">2. Interakt\u00edvna \u010das\u0165</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "408bc68aea21f849d5030c6d7ffb8062",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "50526861b4727246d8429add54f20ca3",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "6e129efb47410d6d2ecaabde5063f656",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "d75e3112962b02cb1dd91a947a33eebb",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "1a9727081b8587a488c91380e1802be7",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "51dc5c5d0cf12d94c6de29e2b386f8d8",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "ab9c0300791f2498185cd8912b3f20b7",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "63406c5ebdfcfadfb90ca73c26e6a5fd",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "6e366dd9daf9a5160d0f9c429ec05b62",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "51704418b95a652b3bc7c1456415b899",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "67e335829e39e0e2efd760916c35936a",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "91234be7e8494c142366c54a9db773d6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "3b9cfa50702929fc9f12c9e217a7065d",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "3c351ee4089c1163e801e2246222b530",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "febe483c6f86606397cfff70542183a1",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "802bb38ba8efd09dad6accb2c55aed12",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"3-otazky-na-overenie-pochopenia\">3. Ot\u00e1zky na overenie pochopenia</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "6daa8771bd3f7dc56a2928f17b776d66",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "9cec76c7dfaeee51eb9612ef429b337b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"4-zdroje-a-citacie\">4. Zdroje a cit\u00e1cie</h2>\n<ol>\n<li>Gonzalez, R. C., Woods, R. E. <em>Digital Image Processing</em>, 4th ed. Pearson, 2018.</li>\n<li>Ahmed, N., Natarajan, T., Rao, K. R. Discrete Cosine Transform. <em>IEEE Trans. Computers</em>, C-23(1), 90\u201393, 1974.</li>\n<li>Wallace, G. K. The JPEG still picture compression standard. <em>IEEE Trans. Consumer Electronics</em>, 38(1), 1992.</li>\n<li>SciPy dokument\u00e1cia: <code>scipy.fft.dctn</code>, <code>numpy.fft.fft2</code>.</li>\n<li>Obr\u00e1zky: <code>skimage.data</code> (camera, astronaut \u2013 public domain).</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
